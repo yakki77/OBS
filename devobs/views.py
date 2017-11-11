@@ -10,6 +10,26 @@ from .models import Users
 def index():
     return render_template('index.html')
 
+@app.route('/account-activity')
+def balance():
+    return render_template('account-activity.html')
+
+@app.route('/deposit')
+def deposit():
+    return render_template('deposit.html')
+
+@app.route('/transfer')
+def transfer():
+    return render_template('transfer.html')
+
+@app.route('/billpay')
+def billpay():
+    return render_template('billpay.html')
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 @app.route('/login')
 def login():
     if g.user is not None and g.user.is_authenticated:
