@@ -20,6 +20,7 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 class Transaction(db.Model):
+    __tablename__ = 'transaction'
     transactionid = db.Column(db.String(80), nullable=False, primary_key=True, autoincrement=True) 
     time = db.Column(db.String(80), nullable=False, server_default='', unique=False)
     fromaccount = db.Column(db.String(80), nullable=False, server_default='', unique=False)
@@ -28,9 +29,10 @@ class Transaction(db.Model):
     touser = db.Column(db.String(80), nullable=False, server_default='', unique=False)
     money = db.Column(db.Integer, nullable=False, unique=False)
     def __repr__(self):
-        return '<Transaction %r>' % str(self.transactionid)
+        return '<Transaction %r>' % self.transactionid
 
 class Account(db.Model):
+    __tablename__ = 'account'
     onlinewalletnumber = db.Column(db.String(80), nullable=False, primary_key=True) 
     ssn = db.Column(db.String(80), nullable=False, server_default='', unique=True)
     spendingaccount = db.Column(db.String(80), nullable=False, server_default='', unique=True)
@@ -39,11 +41,14 @@ class Account(db.Model):
     savingbalance = db.Column(db.Integer, nullable=False, unique=False)
     pinpassword = db.Column(db.String(80), nullable=False, server_default='', unique=False) 
     def __repr__(self):
-        return '<Account %r>' % str(self.onlinewalletnumber)
+        return '<Account %r>' % self.onlinewalletnumber
 
      
 class CheckInfo(db.Model):
+    __tablename__ = 'checkinfo'
     checknumber = db.Column(db.String(80), nullable=False, primary_key=True)
     money = db.Column(db.Integer, nullable=False) 
     date = db.Column(db.String(80), nullable=False) 
     imagepath = db.Column(db.String(80), nullable=True)
+    def __repr__(self):
+        return '<CheckInfo %r>' % self.checknumber

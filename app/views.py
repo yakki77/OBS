@@ -5,8 +5,9 @@ import json
 import os
 import base64
 import traceback
-from flask import Flask, request, render_template, redirect, url_for, session
+from flask import request
 from app.models import User, Transaction, Account, CheckInfo
+from sqlalchemy import or_
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -22,10 +23,10 @@ def image_to_base64(file_path):
 def login():
     res = {"errorMsg":"", "data":{}, "success": 0}
     try:
-        username = request.form.get('username')
-        password = request.form.get('password')
+        username = request.json['username']
+        password = request.json['password']
         user_info = User.query.filter_by(username=username, password=password).first()
-        if user_info != None:
+        if user_info is not None:
             res['success'] = 1
             res['data']['ssn'] = user_info.ssn
             res['data']['username'] = user_info.username
@@ -37,8 +38,9 @@ def login():
             res['data']['security_question'] = user_info.security_question
             res['data']['security_answer'] = user_info.security_answer
         else:
-            res['errorMsg'] = "username or password error"
+            res['errorMsg'] = "Username or password error"
     except Exception, e:
+        res['errorMsg'] = "Login error"
         print traceback.format_exc()
 
     return json.dumps(res)
@@ -47,46 +49,43 @@ def login():
 def register():
     res = {"errorMsg":"", "data":{}, "success": 0}
     try:
-        ssn = request.form.get("ssn")
-        online_wallet_number = request.form.get('onlinewalletnumber')
-        pin_password = request.form.get("pinpassword")
+        ssn = request.json["ssn"]
+        online_wallet_number = request.json['onlinewalletnumber']
+        pin_password = request.json["pinpassword"]
         # search if it has
         ssn_account = Account.query.filter_by(ssn=ssn).first()
-        print "ssn account: ", ssn_account
-        if ssn_account != None and ssn_account.onlinewalletnumber == online_wallet_number and ssn_account.pinpassword == pin_password:
+        if ssn_account is not None and ssn_account.onlinewalletnumber == online_wallet_number and ssn_account.pinpassword == pin_password:
             # add in user table
-            print "check ssn account success"
             db.session.add(User(ssn=ssn))
             db.session.commit()
-            print "add user success"
             res['success'] = 1
             res['data']['ssn'] = ssn
-            res['data']['online_wallet_number'] = online_wallet_number
+            res['data']['onlinewalletnumber'] = online_wallet_number
 
     except Exception, e:
-        res['errorMsg'] = "register error"
+        res['errorMsg'] = "Register error"
         print traceback.format_exc()
 
     return json.dumps(res)
 
-@app.route("/updatePersonInfo", methods=['POST'])
+@app.route("/updateUserInfo", methods=['POST'])
 def update_personal_info():
     res = {"errorMsg":"", "data":{}, "success": 0}
     try:
-        ssn = request.form.get("ssn")
-        username = request.form.get("username")
-        firstname = request.form.get("firstname")
-        lastname = request.form.get("lastname")
-        password = request.form.get("password")
-        email = request.form.get("email")
-        phonenumber = request.form.get("phonenumber")
-        birthday = request.form.get("birthday")
-        security_question = request.form.get("securityquestion")
-        security_answer = request.form.get("securityanswer")
+        ssn = request.json["ssn"]
+        username = request.json["username"]
+        firstname = request.json["firstname"]
+        lastname = request.json["lastname"]
+        password = request.json["password"]
+        email = request.json["email"]
+        phonenumber = request.json["phonenumber"]
+        birthday = request.json["birthday"]
+        security_question = request.json["securityquestion"]
+        security_answer = request.json["securityanswer"]
 
         # update info
         user = User.query.filter_by(ssn=ssn).first()
-        if user != None:
+        if user is not None:
             user.username = username
             user.firstname = firstname
             user.lastname = lastname
@@ -100,7 +99,7 @@ def update_personal_info():
             res['success'] = 1
 
     except Exception, e:
-        res['errorMsg'] = "update info error"
+        res['errorMsg'] = "Update info error"
         print traceback.format_exc()
 
     return json.dumps(res)
@@ -110,9 +109,10 @@ def get_user_info():
     res = {"errorMsg":"", "data":{}, "success": 0}
     try:
         username = request.args.get("username")
-        password = request.args.get("password")
-        user_info = User.query.filter_by(username=username, password=password).first()
-        if user_info != None:
+        print request.args
+        user_info = User.query.filter_by(username=username).first()
+        print user_info
+        if user_info is not None:
             res['data']['ssn'] = user_info.ssn
             res['data']['username'] = user_info.username
             res['data']['email'] = user_info.email
@@ -120,12 +120,12 @@ def get_user_info():
             res['data']['lastname'] = user_info.lastname
             res['data']['phonenumber'] = user_info.phonenumber
             res['data']['birthday'] = user_info.birthday
-            res['data']['security_question'] = user_info.security_question
-            res['data']['security_answer'] = user_info.security_answer
+            res['data']['securityquestion'] = user_info.security_question
+            res['data']['securityanswer'] = user_info.security_answer
             res['success'] = 1
     except Exception, e:
+        res['errorMsg'] = "Get user info error"
         print traceback.format_exc()
-        res['errorMsg'] = "get user info error"
 
     return json.dumps(res)
 
@@ -139,14 +139,14 @@ def save_money_by_check():
         image_base64_path = basedir + "/" + image_to_base64(basedir+"/test")
         check_image.save(image_base64_path)
 
-        check_number = request.form.get("checknumber")
-        check_money = request.form.get("checkmoney")
-        ssn = request.form.get("ssn")
-        check_date = request.form.get("checkdate")
-        toaccount = request.form.get("account")
+        check_number = request.json["checknumber"]
+        check_money = request.json["checkmoney"]
+        ssn = request.json["ssn"]
+        #check_date = request.form.get("checkdate")
+        toaccount = request.json["account"]
 
         check_info = CheckInfo.query.filter_by(checknumber=check_number, money=check_money).first()
-        if check_info != None:
+        if check_info is not None:
             account = Account.query.filter_by(ssn=ssn)
             if toaccount == account.spendingaccount:
                 account.spendingbalance += int(check_money)
@@ -161,6 +161,7 @@ def save_money_by_check():
             else:
                 res["errorMsg"] = "The account not found"
     except Exception, e:
+        res['errorMsg'] = "Save money by check error"
         print traceback.format_exc()
 
     return json.dumps(res)
@@ -170,14 +171,13 @@ def save_money_by_check():
 def transfor_found():
     res = {"errorMsg":"", "data":{}, "success": 0}
     try:
-       fromaccount = request.form.get("fromaccount")
-       toaccount = request.form.get("toaccount")
-       online_wallet_number = request.form.get("onlinewalletnumber")
-       money = int(request.form.get("money"))
+       fromaccount = request.json["fromaccount"]
+       toaccount = request.json["toaccount"]
+       online_wallet_number = request.json["onlinewalletnumber"]
+       money = int(request.json["money"])
        account_info = Account.query.filter_by(onlinewalletnumber=online_wallet_number).first()
        # if account can found
-       print type(account_info.savingbalance)
-       if account_info != None:
+       if account_info is not None:
            # if from an to account are all in the online account
            if (account_info.spendingaccount in [toaccount, fromaccount]) and (account_info.savingaccount in [toaccount,fromaccount]):
                # if to account is spending account
@@ -188,8 +188,8 @@ def transfor_found():
                        account_info.spendingbalance += money
                        db.session.commit()
                        res['success'] = 1
-                       res['data']['from_account_balance'] = account_info.savingbalance
-                       res['data']['to_account_balance'] = account_info.spendingbalance
+                       res['data']['fromaccount_balance'] = account_info.savingbalance
+                       res['data']['toaccount_balance'] = account_info.spendingbalance
                        return json.dumps(res)
                     else:
                        res["errorMsg"] = "There is not sufficient funds in your account"
@@ -201,22 +201,23 @@ def transfor_found():
                        account_info.savingbalance += money
                        db.session.commit()
                        res['success'] = 1
-                       res['data']['from_account_balance'] = account_info.spendingbalance
-                       res['data']['to_account_balance'] =  account_info.savingbalance
+                       res['data']['fromaccount_balance'] = account_info.spendingbalance
+                       res['data']['toaccount_balance'] = account_info.savingbalance
                        return json.dumps(res)
                     else:
                        res["errorMsg"] = "There is not sufficient funds in your account"
                        return json.dumps(res)
            else:
-               res["errorMsg"] = "the accounts are not in your online wallet"
+               res["errorMsg"] = "The accounts are not in your online wallet"
                return json.dumps(res)
        # if account not fount
        else:
-           res['errorMsg'] = "the online wallet number error"
+           res['errorMsg'] = "The online wallet number error"
            return json.dumps(res)
 
     except Exception, e:
-       print traceback.format_exc()
+        res['errorMsg'] = "Transfor found error"
+        print traceback.format_exc()
 
     return json.dumps(res)
 
@@ -224,19 +225,44 @@ def transfor_found():
 @app.route("/paybill", methods=['POST'])
 def pay_bill():
     res = {"errorMsg":"", "data":{}, "success": 0}
-    pass
-    # try:
-    #     fromaccount = request.form.get("fromaccount")
-    #     toaccount = request.form.get("toaccount")
-    #     money = request.form.get("money")
-    #     fromaccount_info = Account.query.filter_by(spendingaccount=fromaccount)
-    #     toaccount_info = Account.query.filter(or_(fromaccount))
-    #
-    #
-    # except Exception, e:
-    #     pass
-    #
-    # return json.dumps(res)
+    try:
+        fromaccount = request.json["fromaccount"]
+        toaccount = request.json["toaccount"]
+        money = int(request.json["money"])
+        # only spending account can pay bill
+        fromaccount_info = Account.query.filter_by(spendingaccount=fromaccount).first()
+        # check if to account is right
+        toaccount_info = db.session.query(Account).filter(or_(Account.spendingaccount==toaccount, Account.savingaccount==toaccount)).first()
+        # if the accounts are all right
+        if fromaccount_info is not None and toaccount_info is not None:
+            # if from account's balance is enough
+            if fromaccount_info.spendingbalance - money > 0:
+                fromaccount_info.spendingbalance -= money
+                # check the to account type(spending or saving)
+                if toaccount_info.spendingaccount == toaccount:
+                    toaccount_info.spendingbalance += money
+                elif toaccount_info.savingaccount == toaccount:
+                    toaccount_info.savingbalance += money
+                # update
+                db.session.commit()
+                res['success'] = 1
+                res['data']['fromaccount_balance'] = fromaccount_info.spendingbalance
+                return json.dumps(res)
+            else:
+                res["errorMsg"] = "There is not sufficient funds in your account"
+                return json.dumps(res)
+        else:
+            # if from account is not right
+            if fromaccount_info is None:
+                res['errorMsg'] = "From account error, check your account"
+            # if to account is not right
+            elif toaccount_info is None:
+                res["errorMsg"] = "To account error, check your account"
+            return json.dumps(res)
 
+    except Exception, e:
+        res['errorMsg'] = "Pay bill error"
+        print traceback.format_exc()
 
+    return json.dumps(res)
 
