@@ -21,13 +21,11 @@ class User(db.Model):
 
 class Transaction(db.Model):
     __tablename__ = 'transaction'
-    transactionid = db.Column(db.String(80), nullable=False, primary_key=True, autoincrement=True) 
+    transactionid = db.Column(db.Integer, nullable=False, primary_key=True, autoincrement=True)
     time = db.Column(db.String(80), nullable=False, server_default='', unique=False)
     fromaccount = db.Column(db.String(80), nullable=False, server_default='', unique=False)
     toaccount = db.Column(db.String(80), nullable=False, server_default='', unique=False)
-    fromuser = db.Column(db.String(80), nullable=False, server_default='', unique=False)
-    touser = db.Column(db.String(80), nullable=False, server_default='', unique=False)
-    money = db.Column(db.Integer, nullable=False, unique=False)
+    amount = db.Column(db.Integer, nullable=False, unique=False)
     def __repr__(self):
         return '<Transaction %r>' % self.transactionid
 
@@ -35,9 +33,9 @@ class Account(db.Model):
     __tablename__ = 'account'
     onlinewalletnumber = db.Column(db.String(80), nullable=False, primary_key=True) 
     ssn = db.Column(db.String(80), nullable=False, server_default='', unique=True)
-    spendingaccount = db.Column(db.String(80), nullable=False, server_default='', unique=True)
+    checkingaccount = db.Column(db.String(80), nullable=False, server_default='', unique=True)
     savingaccount = db.Column(db.String(80), nullable=False, server_default='', unique=True)
-    spendingbalance = db.Column(db.Integer, nullable=False, unique=False)
+    checkingbalance = db.Column(db.Integer, nullable=False, unique=False)
     savingbalance = db.Column(db.Integer, nullable=False, unique=False)
     pinpassword = db.Column(db.String(80), nullable=False, server_default='', unique=False) 
     def __repr__(self):
@@ -47,8 +45,8 @@ class Account(db.Model):
 class CheckInfo(db.Model):
     __tablename__ = 'checkinfo'
     checknumber = db.Column(db.String(80), nullable=False, primary_key=True)
-    money = db.Column(db.Integer, nullable=False) 
+    amount = db.Column(db.Integer, nullable=False)
     date = db.Column(db.String(80), nullable=False) 
-    imagepath = db.Column(db.String(80), nullable=True)
+    imagepath = db.Column(db.String(255), nullable=True)
     def __repr__(self):
         return '<CheckInfo %r>' % self.checknumber
