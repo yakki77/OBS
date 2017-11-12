@@ -1,1 +1,4 @@
-flask-env/
+.vscode
+.DS_Store
+.idea
+*.pyc
