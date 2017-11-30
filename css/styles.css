@@ -24014,7 +24014,7 @@ body .row > div[class^='col-'] {
   border-bottom-left-radius: 0px;
   border-top-left-radius: 3px;
 }
-.app .app-navigation-horizontal nav > ul > li.openable.active > a {
+.app .app-navigation-horizontal nav > ul > li.active > a {
   background: #FFF;
 }
 .app .app-navigation-horizontal nav > ul > li.active > a {
