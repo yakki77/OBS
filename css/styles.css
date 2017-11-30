@@ -21938,7 +21938,7 @@ body .row > div[class^='col-'] {
   float: left;
   width: 300px;
   height: 59px;
-  background: url(../img/logo.png) left top no-repeat;
+  background: url(../img/logo1.png) left top no-repeat;
   text-indent: 9999px;
   font-size: 0px;
   -webkit-transition: background 100ms linear;
@@ -21948,7 +21948,7 @@ body .row > div[class^='col-'] {
   transition: background 100ms linear;
 }
 .app .app-header .app-header-logo.app-header-logo-light {
-  background: url(../img/logo-dark.png) left top no-repeat;
+  background: url(../img/logo1.png) left top no-repeat;
 }
 .app .app-header .app-header-logo.app-header-logo-condensed {
   width: 120px;
@@ -22291,7 +22291,7 @@ body .row > div[class^='col-'] {
 }
 .app .app-header.app-header-design-dark .app-header-logo {
   background-color: #272c40;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/logo.jpg);
 }
 .app .app-header.app-header-design-dark .app-header-logo:hover {
   background-color: #252a3d;
