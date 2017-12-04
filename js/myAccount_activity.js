@@ -1,0 +1,3 @@
+$("#searchActivity").on("click", function(){
+
+})
