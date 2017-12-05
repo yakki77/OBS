@@ -48,11 +48,11 @@ a:focus, a:hover {
 /*-- //Reset-Code --*/
 
 .top-main{
-	background:#000;
+	background:#EDEFF0;
     padding: 0 2em;
 }
 .number h3 {
-    color: #FFFFFF;
+    color: #000;
     font-size: 1em;
     line-height: 2em;
     margin: 1em 0 0;
@@ -82,17 +82,17 @@ ul.top-icons {
     float: left;
 }
 .social-icons ul li a i.fa {
-    color: #FFFFFF;
+    color: #000;
     font-size: 1em;
     background: none;
-    border: 1px solid #FFFFFF;
+    border: 1px solid #000;
     width: 30px;
     height: 30px;
     line-height: 1.9em;
     text-align: center;
 }
 .social-icons i.fa.fa-facebook:hover,.social-icons i.fa.fa-twitter:hover,.social-icons i.fa.fa-google-plus:hover,.social-icons i.fa.fa-linkedin:hover,.social-icons i.fa.fa-pinterest-p:hover {
-    color: #ffffff;
+    color: #000;
 	transition:0.5s all;
 }
 .social-icons i.fa.fa-facebook:hover {
@@ -114,18 +114,18 @@ ul.top-icons {
     width: 100%;
     padding: 0em;
     font-size: 1em;
-    color: #ffffff;
+    color: #000;
     background-color: transparent;
     border: transparent;
     border-radius: 0px;
 }
 i.fa.fa-search {
-    color: #ffffff;
+    color: #000;
 }
 .navbar-left {
     float: none !important;
     margin: 0px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #000;
 }
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
     margin-right: 0;
@@ -174,7 +174,7 @@ i.fa.fa-search {
     text-align: center;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #000000;
+    color: #C5D1CD;
     font-size: 1.2em;
     text-transform: capitalize;
 }
@@ -187,8 +187,8 @@ i.fa.fa-search {
     padding-bottom: 1em;
 }
 .navbar-default {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #dadada;
+    background-color: #1b2531;
+    border-bottom: 1px solid #1b2531;
     border-radius: 0px;
 }
 .navbar {
@@ -245,10 +245,10 @@ i.fa.fa-inr {
     color: #FFFFFF;
     background: #ffb900;
     border: 2px solid #ffb900;
-    text-transform: uppercase;
+/*    text-transform: uppercase;*/
     padding: .2em 1em;
     font-size: 1.3em;
-    font-family: 'Ropa Sans', sans-serif;
+/*    font-family: 'Ropa Sans', sans-serif;*/
 }
 input[type="submit"]:hover {
     background: transparent;
@@ -286,11 +286,11 @@ input[type="submit"]:hover {
 .banner-right-text {
     margin: 1em 0 0 0;
 }
-.banner-right h4 {
+.banner-right h3 {
     margin: 2em 0;
     text-transform: uppercase;
-    line-height: 1.6em;
-    color: #b9b9b9;
+    line-height: 0.1em;
+    color: #ffffff;
     font-family: 'Ropa Sans', sans-serif;
 }
 .services-heading h3,.team h4,.blog-heading h3,.about-heading h2,.skills-heading h3,.payments-heading h3,.contact-heading h3{
@@ -929,7 +929,7 @@ iframe {
 	.banner-right {
 		padding: 3em;
 	}
-	.banner-right h4 {
+	.banner-right h3 {
 		margin: 1em 0;
 	}
 	.team-grids, .payment-grids, .about-grids, .blog-grids, .contact-grids {
@@ -1457,7 +1457,7 @@ iframe {
 		margin: 0 0 1em;
 		text-align: center;
 	}
-	.banner-right h4 {
+	.banner-right h3 {
 		margin: .5em 0;
 	}
 	.team-gds {
@@ -1503,7 +1503,7 @@ iframe {
 	.banner-right h1 {
 		font-size: 1.64em;
 	}
-	.banner-right h4 {
+	.banner-right h3 {
 		font-size: 1.2em;
 	}
 	.banner-right i.fa {
