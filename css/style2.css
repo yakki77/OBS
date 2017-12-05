@@ -221,7 +221,7 @@ i.fa.fa-inr {
     background-size: cover;
 }
 .banner-left {
-    background: #3aa5dc;
+    background: #1f2433;
     padding: 3em;
 	width:35%;
 }
@@ -366,7 +366,7 @@ input[type="submit"]:hover {
 .service-grid-text {
     text-align: center;
     padding: 2em;
-    border: 2px dashed #3aa5dc;
+    border: 2px dashed #1f2433;
 }
 .service-grid-text p {
     color: #999999;
@@ -381,7 +381,7 @@ input[type="submit"]:hover {
 
 /* skills */
 .skills,.contact{
-	background:#3aa5dc;
+	background:#1f2433;
 }
 .career-growth {
     padding: 1em 0em;
