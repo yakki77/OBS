@@ -10,6 +10,25 @@ $(function(){
 
     //editables 
 
+//start alert settings- add by chang liu
+$('#alert-balance-low').editable();
+$('#alert-atm').editable();
+$('#alert-check').editable();
+$('#alert-direct-deposit').editable();
+$('#alert-transfer').editable();
+$('#alert-wire-transfer').editable();
+$('#saving-alert-balance-low').editable();
+$('#saving-alert-atm').editable();
+$('#saving-alert-check').editable();
+$('#saving-alert-direct-deposit').editable();
+$('#saving-alert-transfer').editable();
+$('#saving-alert-wire-transfer').editable();
+
+
+alert-wire-transfer
+
+
+//end alert settings
     $('#username').editable({
         type: 'text',
         pk: 1,
