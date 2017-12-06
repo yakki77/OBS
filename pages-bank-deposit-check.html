@@ -93,76 +93,73 @@
                     </div>
                                                                                                   
                     <!-- START PAGE CONTAINER -->
+					
                     <div class="container container-boxed">
-                        
-                        <!-- DEPOSITS -->
-                        <div class="block block-condensed">
-                            <div class="app-heading app-heading-small">                                        
-                                <div class="title">
-                                    <h2>Deposit History</h2>
-                                    <p>Viewing all deposits from the last 30 days.</p>
-                                </div>
-                                <div class="heading-elements">                                    
-                                    <div class="input-group margin-right-5" style="width: 200px;"> 
-                                        <div class="input-group-addon">
-                                            <span class="fa fa-search"></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Search">
-                                    </div>                    
-                                    <button class="btn btn-default btn-icon"><span class="icon-printer"></span></button>
-                                </div>
-                            </div>
+                     <div class="row">
+                                <!-- Begin Check Deposit-->
+                        <div class="block">                        
                             
-                            <div class="block-content">
-                                <table class="table table-bordered table-striped margin-bottom-10">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th style="width: 25%;">Date</th>
-                                            <th style="width: 35%;">Memo</th>
-                                            <th>Amount</th>
-                                            <th>Status</th>
-                                            <th style="width: 20%;">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>15.06.2017 <span class="fa fa-long-arrow-right"></span> 15.06.2017</td>
-                                            <td>Deposit <strong>"Universal"</strong></td>
-                                            <td>$14,500</td>
-                                            <td>Pending</td>
-                                            <td>
-                                                <button class="btn btn-default btn-icon" style="width: 50px">Edit</button>
-                                                <button class="btn btn-default btn-icon" style="width: 50px">Cancel</button>
-                                            </td>
-                                        </tr>                                    
-                                        <tr>
-                                            <td>2</td>
-                                            <td>30.08.2017 <span class="fa fa-long-arrow-right"></span> 30.08.2017</td>
-                                            <td>Deposit <strong>"Money Box"</strong></td>
-                                            <td>$550</td>
-                                            <td>Pending</td>
-                                            <td>                                               <button class="btn btn-default btn-icon"       style="width: 50px">Edit</button>
-                                                <button class="btn btn-default btn-icon" style="width: 50px">Cancel</button>
-                                            </td>
-                                        </tr>                                    
-                                    </tbody>
-                                </table>
+                            <div class="app-heading app-heading-small">                                
+                                <div class="title">
+                                    <h2>Deposit a Check</h2>
+                                    <p>Please enter the information as it appears on the check.</p>
+                                </div>                                
                             </div>
+                                  
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Deposit Into:</label>
+                                    <div class="col-md-10">
+                                        <select class="form-control" id="toAccount" name="toAccount" required></select>
+                                        <span class="help-block">Money usually available within 4 business days.</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Check Front:</label>
+                                    <div class="col-md-10">
+                                        <input type="file" id="checkImageFront" name="checkImageFront" accept="image/*" required>
+                                        <span class="help-block">Please provide a picture of the front of the check.</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Check Back:</label>
+                                    <div class="col-md-10">
+                                        <input type="file" id="checkImageBack" name="checkImageBack" accept="image/*"  required>
+                                        <span class="help-block">Please provide a picture of the back of the check.</span>
+                                    </div>
+                                </div>
+								<div class="form-group">
+                                    <label class="col-md-2 control-label">Check Number:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" placeholder="Enter ..." id="checkNumber" name="checkNumber"  required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Amount:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" placeholder="Enter ..." id="amount"  name="amount" required>
+                                        <span class="help-block">Remaining deposit limit: $5,000.00</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Memo:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" placeholder="Enter ..." id="memo" name="memo">
+                                        <span class="help-block">Optional</span>
+                                    </div>
+                                </div>
+								<p>                            
+                                        <button type="button" class="btn btn-primary">Submit</button>                                        
+                                        <button type="button" class="btn btn-primary btn-clean">Cancel</button>
+                                </p>
+                            </form>
+                            
                         </div>
-                        <!-- END DEPOSITS -->
-                        
-                        <div class="list-group list-group-condensed">                 
-                            <div class="list-group-title">Quisque leo quam, fermentum eget velit nec</div>
-                            <a href="#" class="list-group-item">Donec lacinia quis massa eu cursus. Duis tristique metus velit, tincidunt venenatis sem convallis id.</a>
-                            <a href="#" class="list-group-item">Morbi id purus lorem. Etiam id luctus est. Aliquam mollis lectus eget est finibus rhoncus.</a>
-                            <a href="#" class="list-group-item">Ut feugiat volutpat dui eu commodo.</a>                                                                                                                        
-                            <div class="list-group-title">Mauris condimentum fermentum leo</div>
-                            <a href="#" class="list-group-item">Proin hendrerit elit a mauris sagittis venenatis.</a>                                        
-                            <a href="#" class="list-group-item"> Vivamus ut commodo dolor. Maecenas mi ante, feugiat ut nulla in, viverra euismod urna.</a>
+                        <!-- END Deposit Check -->
+                                
+                                
+                                                                                 
                         </div>
-                        
                     </div>
                     <!-- END PAGE CONTAINER -->
                     
@@ -221,12 +218,47 @@
         <script type="text/javascript" src="js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <!-- END IMPORTANT SCRIPTS -->
         <!-- THIS PAGE SCRIPTS -->
-        
+        <script type="text/javascript" src="js/vendor/bootstrap-select/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
         <!-- END THIS PAGE SCRIPTS -->
         <!-- APP SCRIPTS -->
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/app_plugins.js"></script>
         <script type="text/javascript" src="js/app_demo.js"></script>
+        <script src="../static/js/main.js" type="application/javascript"></script>
+
+    <script type="application/javascript">
+    $(function () {
+        fillSelectAccounts("toAccount");
+
+        $("#deposit-form").submit(function (event) {
+           event.preventDefault();
+           var form = $(this)[0]; // You need to use standard javascript object here
+            var formData = new FormData(form);
+            console.log(formData);
+
+           $.ajax({
+               url: "/api/user/deposit",
+               type: "POST",
+               data: formData,
+               dataType: "json",
+               contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+                processData: false, // NEEDED, DON'T OMIT THIS
+               success: function (d) {
+                   if (d.status == 0) {
+                       getAccounts();
+                       callMsg="<div class=\"callout callout-success\">\n" +
+                           "                <h4>Deposit succeeded.</h4>\n" +
+                           "\n</div>";
+                       console.log(callMsg);
+                       $("#deposit-box").append(callMsg);
+                   }
+               }
+           });
+       });
+    });
+    </script>
         <!-- END APP SCRIPTS -->
     </body>
 </html>
