@@ -296,17 +296,18 @@
                                 <!-- NEWS -->
                                 <ul class="app-feature-gallery app-feature-gallery-noshadow">
                                     <li>
-                                        <div class="tile-basic tile-basic-bordered">
+                                        <div class="tile-basic tile-basic-bordered" style="height: 275px">
                                             <div class="tile-content text-center">
                                                 <h3 class="tile-title">Devonshire purchase with cash back!</h3>
                                                 <span class="tile-subtitle">News</span>
                                                 <p>Use your account now to get cash back as you shop!  More than 20 brands and shops! </p>
-                                                <p class="text-muted text-center">25.06.2017 15:19</p>
+                                                <img src="img/shop1.png"> &nbsp; <img src="img/shop2.png"> &nbsp;&nbsp;<img src="img/shop3.png"> &nbsp; <a href="#"> And more...</a>
+                                                <!-- <p class="text-muted text-center">25.06.2017 15:19</p> -->
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="tile-basic tile-basic-bordered">
+                                        <div class="tile-basic tile-basic-bordered" style="height: 275px">
                                             <div class="tile-content text-center">
                                                 <h3 class="tile-title">Our new service</h3>
                                                 <span class="tile-subtitle">Actions</span>
@@ -317,7 +318,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="tile-basic tile-basic-bordered">
+                                        <div class="tile-basic tile-basic-bordered" style="height: 275px">
                                             <div class="tile-content text-center">
                                                 <h3 class="tile-title">Changes in our bank</h3>
                                                 <span class="tile-subtitle">Corporate</span>
@@ -327,7 +328,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="tile-basic tile-basic-bordered">
+                                        <div class="tile-basic tile-basic-bordered" style="height: 275px">
                                             <div class="tile-content text-center">
                                                 <h3 class="tile-title">New action special for you</h3>
                                                 <span class="tile-subtitle">Actions</span>
@@ -345,7 +346,7 @@
                                     <div class="app-heading app-heading-small">
                                         <div class="title">
                                             <h2>Transfer Money</h2>
-                                            <p>On your accounts and to other</p>
+                                            <p>To your accounts and to other</p>
                                         </div>
                                     </div>
 
@@ -379,6 +380,8 @@
                                                     <label>Currency</label>
                                                     <select class="bs-select" name="currency" id="currency">
                                                         <option value="1">USD</option>
+                                                        <option value="2">MXN</option>
+                                                        <option value="2">CAD</option>
                                                         <option value="2">EURO</option>
                                                     </select>
                                                 </div>
@@ -386,7 +389,7 @@
                                         </div>
 
                                         <div>
-                                            <button class="btn btn-link pull-left padding-left-0">Information about fee</button>
+                                            <button class="btn btn-link pull-left padding-left-0">Information about transaction fee</button>
                                             <button class="btn btn-primary btn-clean pull-right" id="transfer">Transfer</button>
                                         </div>
 
@@ -419,44 +422,56 @@
 
                                 <!-- TRANSFER -->
                                 <div class="block block-condensed block-highlight">
+                                    
                                     <div class="app-heading app-heading-small">
+                                        <div class="icon icon-lg text-blue-400">
+                                            <span class="icon-question-circle"></span>
+                                        </div>
                                         <div class="title">
-                                            <h2>Charity</h2>
-                                            <p>Help people who need money</p>
+                                            <h2>FAQs</h2>
+                                            <p>Frequently asked general questions </p>
                                         </div>
-                                    </div>
-                                    <div class="block-content">
-
-                                        <div class="form-group">
-                                            <label>Service</label>
-                                            <select class="bs-select" name="from" title="Choose service" data-live-search="true">
-                                                <option value="1">Help orphanages</option>
-                                                <option value="2">Help people with cancer</option>
-                                                <option value="3">Army Help</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>From</label>
-                                                    <select class="bs-select" name="from" title="Choose your card">
-                                                        <option value="1">$1,544 Universal Gold Card</option>
-                                                        <option value="2">$38,109 MasterCard Platinum</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label>Amout</label>
-                                                    <input type="text" class="form-control" name="amout" placeholder="0.00">
-                                                </div>
+                                    </div>                                                                        
+                                    
+                                    <div class="app-faq">
+                                        
+                                        <div class="app-faq-item">
+                                            <div class="app-faq-item-title">What information is needed for a bill payment?</div>
+                                            <div class="app-faq-item-content">
+                                                <p>Generally, names, account number, phone numbers, address are needed.</p>
                                             </div>
                                         </div>
-
-                                        <div>
-                                            <button class="btn btn-danger btn-clean pull-right"><span class="icon-heart"></span> Help People</button>
+                                        
+                                        <div class="app-faq-item">
+                                            <div class="app-faq-item-title">How much loans can I apply for?</div>
+                                            <div class="app-faq-item-content">
+                                                <p>It really depends on your personal information and the loan type you choose. Generally, our staff will evaluate your credit history, repayment ability and the loan type you apply for.</p>
+                                            </div>
                                         </div>
+                                                                                
+                                        <div class="app-faq-item">
+                                            <div class="app-faq-item-title">What information do I need to apply for loans?</div>
+                                            <div class="app-faq-item-content">
+                                                <p>Please see more details in our Loans service page, different types of loans have different requirements.</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="app-faq-item">
+                                            <div class="app-faq-item-title">I forget my security question answer, what should I do?</div>
+                                            <div class="app-faq-item-content">
+                                                <p>Please contact us as soon as possible or come to our physical branches. We will verify your personal information and help you to reset the security answer.</p>
+                                            </div>
+                                        </div>
+                                       
+<!--                                         <div class="app-faq-item">
+                                            <div class="app-faq-item-title">Quisque ut porta purus. Praesent maximus sem dolor?</div>
+                                            <div class="app-faq-item-content">
+                                                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In eu congue sem. Pellentesque et augue et nulla consequat blandit. Aliquam imperdiet lacus in dolor ullamcorper, sed accumsan est ornare. Pellentesque commodo blandit semper. Pellentesque eget imperdiet tellus, at malesuada ex. Sed vulputate enim ac tortor viverra, at rutrum nisl semper. Fusce sed nisi dictum dui vestibulum lacinia quis in sem. Curabitur pulvinar interdum justo, vel tincidunt tellus sodales sed. Etiam ac purus vitae mi tempus mattis.</p>
+                                            </div>
+                                        </div> -->
                                     </div>
+                                    
                                 </div>
-                                <!-- END TRANSFER -->
 
                             </div>
                         </div>
@@ -474,7 +489,7 @@
 
                 <div class="container container-boxed">
                     <div class="app-footer-line">
-                        <div class="copyright">&copy; 2016 Boooya. All right reserved in the Ukraine and other countries.</div>
+                        <div class="copyright">&copy; 2017 Devonshire Lending. All right reserved.</div>
                         <div class="pull-right">
                             <ul class="list-inline">
                                 <li><a href="#">About</a></li>
@@ -526,8 +541,7 @@
         <!-- APP SCRIPTS -->
         <script type="text/javascript" src="js/app.js"></script>
         <script type="text/javascript" src="js/app_plugins.js"></script>
-
-<!--         <script type="text/javascript" src="js/app_demo.js"></script> -->
+        <script type="text/javascript" src="js/app_faq.js"></script>
         <!-- END APP SCRIPTS -->
     </body>
 </html>
