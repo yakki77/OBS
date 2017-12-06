@@ -182,6 +182,7 @@ i.fa.fa-search {
     color: #ffffff;
     background: #ffb900;
 }
+
 .navbar-nav > li > a {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -196,7 +197,7 @@ i.fa.fa-search {
 	min-height:0px;
 }
 .logo a {
-    color: #000;
+    color: #1b2531;
     font-size: 3em;
     font-weight: 600;
     text-transform: uppercase;
@@ -570,7 +571,8 @@ input[type="submit"]:hover {
     z-index: 999;
 }
 .team{
-	background:url('../img/team.jpg')no-repeat 0px 0px;
+  background-color: #f7f7f7;
+  height: 420px;
 	background-size:cover;
 }
 .team-grids,.payment-grids,.about-grids,.blog-grids,.contact-grids{
@@ -684,19 +686,19 @@ input[type="submit"]:hover {
     background: url(../img/m1.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
-i.fa.fa-cc-visa ,i.fa.fa-cc-mastercard,i.fa.credit.fa-credit-card-alt,i.fa.fa-credit-card-alt{
+i.fa.fa-expeditedssl ,i.fa.fa-cogs,i.fa.fa-line-chart,i.fa.fa-asl-interpreting{
     font-size: 7em;
 }
-i.fa.fa-cc-visa {
+i.fa.fa-expeditedssl {
     color: #ffffff;
 }
-i.fa.fa-cc-mastercard {
+i.fa.fa-cogs {
     color: #ffffff;
 }
-i.fa.credit.fa-credit-card-alt {
+i.fa.fa-line-chart {
     color: #ffffff;
 }
-i.fa.fa-credit-card-alt {
+i.fa.fa-asl-interpreting {
     color: #ffffff;
 }
 .payment h5 {
@@ -1078,7 +1080,7 @@ iframe {
 	}
 }
 @media (max-width: 768px){
-	i.fa.fa-cc-visa, i.fa.fa-cc-mastercard, i.fa.credit.fa-credit-card-alt, i.fa.fa-credit-card-alt {
+	i.fa.fa-expeditedssl, i.fa.fa-cogs, i.fa.fa-line-chart, i.fa.fa-asl-interpreting {
 		font-size: 6em;
 	}
 }
@@ -1387,7 +1389,7 @@ iframe {
 		bottom: 90px;
 		left: 50px;
 	}
-	i.fa.fa-cc-visa, i.fa.fa-cc-mastercard, i.fa.credit.fa-credit-card-alt, i.fa.fa-credit-card-alt {
+	i.fa.fa-expeditedssl, i.fa.fa-cogs, i.fa.fa-line-chart, i.fa.fa-asl-interpreting {
 		font-size: 4em;
 	}
 	.payment h5 {
@@ -1445,7 +1447,7 @@ iframe {
 	.form-control {
 		width: 70%;
 	}
-	i.fa.fa-cc-visa, i.fa.fa-cc-mastercard, i.fa.credit.fa-credit-card-alt, i.fa.fa-credit-card-alt {
+	i.fa.fa-expeditedssl, i.fa.fa-cogs, i.fa.fa-line-chart, i.fa.fa-asl-interpreting {
 		font-size: 6em;
 	}
 	.navbar-nav > li > a {
