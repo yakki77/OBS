@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Devonshire Admin</title>
+
+        <!-- META SECTION -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <!-- END META SECTION -->
+        <!-- CSS INCLUDE -->
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- EOF CSS INCLUDE -->
+    </head>
+    <body>
+
+        <!-- APP WRAPPER -->
+        <div class="app">
+
+            <!-- START APP CONTAINER -->
+            <div class="app-container">
+                <!-- START APP HEADER -->
+                <div class="app-header">
+                    <div class="container container-boxed">
+                        <ul class="app-header-buttons visible-mobile">
+                            <li><a href="#" class="btn btn-link btn-icon" data-navigation-horizontal-toggle="true"><span class="icon-menu"></span></a></li>
+                        </ul>
+                        <a href="index.html" class="app-header-logo app-header-logo-light app-header-logo-condensed">Project</a>
+
+                        <ul class="app-header-buttons pull-right">
+                            <li><a href="#" class="btn btn-link btn-icon"><span class="icon-cog"></span></a></li>
+                            <li><a href="#" class="btn btn-default">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END APP HEADER  -->
+
+                <!-- START APP CONTENT -->
+                <div class="app-content">
+                    <div class="app-navigation-horizontal margin-bottom-15">
+                        <div class="container container-boxed">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="#"><span class="icon-home"></span> Manage Account</a>
+                                        <ul>
+                                            <li><a href="a-admin-main.html">Account Profile</a></li>
+                                            <li><a href="a-admin-security.html"> Activity and Security</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                    	<a href="a-admin-loan.html"><span class="icon-earth"></span> Loan Review</a>
+                                    </li>
+                                    <li>
+                                    	<a href="#"><span class="icon-store"></span> Staff Management</a>
+                                    </li>
+                                    <li>
+                                    	<a href="a-admin-transfer.html"><span class="icon-license"></span> Data Transfer</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- START PAGE CONTAINER -->
+                    <div class="container container-boxed">
+
+                        <div class="alert alert-info alert-icon-block alert-dismissible" role="alert">
+                            <div class="alert-icon">
+                                <span class="icon-question-circle"></span>
+                            </div>
+                            We use cookies to offer you the best experience on our website. Continuing browsing, you accept our cookies policy.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="fa fa-times"></span></button>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <!-- Accounts -->
+                                <div class="block block-condensed">
+                                    <div class="app-heading app-heading-small">
+                                        <div class="title">
+                                            <h2>Search Account</h2><br><br>
+                                            <select class="bs-select" name="from" title="Choose your card" tabindex="-98"><option class="bs-title-option" value="">Choose Filter</option>                                                        
+                                                        <option value="1">By Account Number</option>
+                                                        <option value="2">By Social Security Number</option>
+                                                        <option value="3">By Username</option>                                                    
+                                                    </select>
+                                                    <br>
+                                                    <br>
+                                                <input type="text" name="search" class="form-control"><br>
+                                                <button class="btn btn-primary btn-clean pull-left">Search</button>
+                                        </div>
+                                    </div>
+
+                               
+                                </div>
+                                <!-- END CARDS -->
+
+                            </div>
+                            <div class="col-md-6">
+                            	<!-- RECENT ACTIVITY -->
+                        <div class="block block-condensed">                            
+                            <div class="app-heading app-heading-small">
+                                <div class="title">
+                                    <h2>Account Settings</h2>
+                                    <p>Last visit: 14:54 28.06.2017</p>
+                                </div>
+                            </div>
+                            <div class="block-content">
+    
+                                <form class="form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-612">
+                                            
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Username</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="JD" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">First Name</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="John" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Last name</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="Doe" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Email</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="johndoe@domain.com">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Phone</label>
+                                                 
+                                                <div class="col-md-4">
+                                                    <label>Primary: </label>
+                                        <input type="text" class="form-control" value="(876) 543-21-09">
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <label>Secondary:</label>
+                                        <input type="text" class="form-control" placeholder="NONE">
+                                                </div>
+                                            </div>    
+                                            
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Address</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="5000 Forbes Avenue">
+                                                </div>
+                                                </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">City:</label>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control" value="Pittsburgh">
+                                                </div>
+                                                <label class="col-md-2 control-label">States:</label>
+                                                <div class="col-md-4">
+                                                    <select class="bs-select" name="states">
+                                                        <option value="PA">Pennsylvania</option>
+                                                        <option value="AL">Alabama</option>
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="AZ">Arizona</option>
+                                                        <option value="AR">Arkansas</option>
+                                                        <option value="CA">California</option>
+                                                        <option value="CO">Colorado</option>
+                                                        <option value="CT">Connecticut</option>
+                                                        <option value="DE">Delaware</option>
+                                                        <option value="DC">District Of Columbia</option>
+                                                        <option value="FL">Florida</option>
+                                                        <option value="GA">Georgia</option>
+                                                        <option value="HI">Hawaii</option>
+                                                        <option value="ID">Idaho</option>
+                                                        <option value="IL">Illinois</option>
+                                                        <option value="IN">Indiana</option>
+                                                        <option value="IA">Iowa</option>
+                                                        <option value="KS">Kansas</option>
+                                                        <option value="KY">Kentucky</option>
+                                                        <option value="LA">Louisiana</option>
+                                                        <option value="ME">Maine</option>
+                                                        <option value="MD">Maryland</option>
+                                                        <option value="MA">Massachusetts</option>
+                                                        <option value="MI">Michigan</option>
+                                                        <option value="MN">Minnesota</option>
+                                                        <option value="MS">Mississippi</option>
+                                                        <option value="MO">Missouri</option>
+                                                        <option value="MT">Montana</option>
+                                                        <option value="NE">Nebraska</option>
+                                                        <option value="NV">Nevada</option>
+                                                        <option value="NH">New Hampshire</option>
+                                                        <option value="NJ">New Jersey</option>
+                                                        <option value="NM">New Mexico</option>
+                                                        <option value="NY">New York</option>
+                                                        <option value="NC">North Carolina</option>
+                                                        <option value="ND">North Dakota</option>
+                                                        <option value="OH">Ohio</option>
+                                                        <option value="OK">Oklahoma</option>
+                                                        <option value="OR">Oregon</option>
+                                                        
+                                                        <option value="RI">Rhode Island</option>
+                                                        <option value="SC">South Carolina</option>
+                                                        <option value="SD">South Dakota</option>
+                                                        <option value="TN">Tennessee</option>
+                                                        <option value="TX">Texas</option>
+                                                        <option value="UT">Utah</option>
+                                                        <option value="VT">Vermont</option>
+                                                        <option value="VA">Virginia</option>
+                                                        <option value="WA">Washington</option>
+                                                        <option value="WV">West Virginia</option>
+                                                        <option value="WI">Wisconsin</option>
+                                                        <option value="WY">Wyoming</option> 
+                                                    </select>
+                                                </div>
+                                                </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">ZIP Code:</label>
+                                                <div class="col-md-3">
+                                                    <input type="text" class="form-control" value="15213">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Email</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" value="johndoe@domain.com">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Country</label>
+                                                <div class="col-md-9">
+                                                    <select class="bs-select" name="country">                                                        
+                                                        
+                                                        <option value="2">United States of America</option>                         <option value="1">Ukraine</option>                               
+                                                        <option value="3">Italy</option>
+                                                        <option value="4">England</option>                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <p>
+                                    <div class="row">
+                                        <div class="col-md-12 text-left">
+                                            <button class="btn btn-primary btn-clean">Update Settings</button>
+                                        </div>
+                                    </div>
+                                    </p>
+                                    
+                                </form>
+                                                                        
+                            </div>
+                        </div>
+
+                          
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTAINER -->
+
+                </div>
+                <!-- END APP CONTENT -->
+
+            </div>
+            <!-- END APP CONTAINER -->
+
+            <!-- START APP FOOTER -->
+            <div class="app-footer app-footer-default" id="footer">
+
+                <div class="container container-boxed">
+                    <div class="app-footer-line">
+                        <div class="copyright">&copy; 2017 Devonshire Lending. All right reserved.</div>
+                        <div class="pull-right">
+                            <ul class="list-inline">
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">API</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END APP FOOTER -->
+        </div>
+        <!-- END APP WRAPPER -->
+
+        <!--
+        <div class="modal fade" id="modal-thanks" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="icon-cross"></span></button>
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p class="text-center margin-bottom-20">
+                            <img src="assets/images/smile.png" alt="Thank you" style="width: 100px;">
+                        </p>
+                        <h3 id="modal-thanks-heading" class="text-uppercase text-bold text-lg heading-line-below heading-line-below-short text-center"></h3>
+                        <p class="text-muted text-center margin-bottom-10">Thank you so much for likes</p>
+                        <p class="text-muted text-center">We will do our best to make<br> Boooya template perfect</p>
+                        <p class="text-center"><button class="btn btn-success btn-clean" data-dismiss="modal">Continue</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <script type="text/javascript" src="js/myAccount_summary.js"> </script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <!-- THIS PAGE SCRIPTS -->
+        <script type="text/javascript" src="js/vendor/bootstrap-select/bootstrap-select.js"></script>
+        <script type="text/javascript" src="js/vendor/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+        <script type="text/javascript" src="js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+        <!-- END THIS PAGE SCRIPTS -->
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="js/app.js"></script>
+        <script type="text/javascript" src="js/app_plugins.js"></script>
+        <script type="text/javascript" src="js/app_faq.js"></script>
+        <!-- END APP SCRIPTS -->
+    </body>
+</html>
